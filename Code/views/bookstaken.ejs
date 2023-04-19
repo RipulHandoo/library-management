@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      }
+      h1 {
+        margin: 20px 0;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        width: 300px;
+        margin-right: 10px;
+      }
+      button[type="submit"],
+      select {
+        background-color: royalblue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: orange;
+      }
+
+      select:hover{
+        background-color: orange;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      /* tr:hover {
+        background-color: #e6f7ff;
+      } */
+      td button {
+        background-color: #0077b6;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      td button:hover {
+        background-color: #023e8a;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      p {
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <div class="main">
+        <div class="logo">
+          <h1>DBMS</h1>
+        </div>
+        <div class="nav">
+          <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/search">Search Book</a></li>
+              <li><a href="/register-emp">Add Employee</a></li>
+              <li><a href="/register-student">Add Student</a></li>
+          </ul>
+          <div class="ig">
+            <img src="profile.jpg" id="navbar" alt="" />
+          </div>
+          <div class="float" id="flow">
+            <div class="ic">
+              
+              <a href="/profile"><p>User Profile</p></a>
+            </div>
+            <div class="ic">
+              <a href="/update-password"><p>Edit Profile</p></a>
+            </div>
+            <div class="ic">
+              <a href="/logout"><p>Logout</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1>Search Books</h1>
+   
+    
+
+      <% if (details && details.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Student Number</th>
+                <th>Student Branch</th>
+                <th>Issued ID</th>
+                <th>Book Title</th>
+                <th>Book ISBN</th>
+                <th>Issued Date</th>
+                <th>Return Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% details.forEach(function(detail) { %>
+              <tr>
+                <td><%= detail.student_id %></td>
+                <td><%= detail.student_name %></td>
+                <td><%= detail.student_email %></td>
+                <td><%= detail.student_phoneNo %></td>
+                <td><%= detail.student_branch %></td>
+                <td><%= detail.issue_id %></td>
+                <td><%= detail.issued_book_name %></td>
+                <td><%= detail.isbn_book %></td>
+                <td><%= detail.issue_date %></td>
+                <td><%= detail.return_date %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No Record Found</p>
+      <% } %>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

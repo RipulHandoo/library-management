@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/styles.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Return Book Page</title>
+   </head>
+<body class="register">
+  <div class="main">
+    <div class="logo">
+      <h1>DBMS</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/search">Search Book</a></li>
+        <li><a href="/register-emp">Add Employee</a></li>
+        <li><a href="/register-student">Add Student</a></li>
+    </ul>
+      <div class="ig">
+        <img src="profile.jpg" id="navbar" alt="" />
+      </div>
+      <div class="float" id="flow">
+        <div class="ic">
+          <i class="fa-solid fa-table-columns"></i>
+          <a href="/profile"><p>User Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-regular fa-user"></i>
+          <a href="/update-password"><p>Edit Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="/logout"><p>Logout</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+            <% if(books && books.length > 0) { %>
+                <% books.forEach(function(book) { %> 
+                    <div class="container-regiter">
+                        <div class="title" style="color: yellow;">Return Book</div>
+                        <div class="content">
+                          <form action="/return-book" method="post">
+                            <div class="user-details">
+                              <div class="input-box">
+                                <span class="details">Student ID</span>
+                                <input type="text" value="<%= book.issued_student %>" name="return_student"required>
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Book Name</span>
+                                <input type="text" value="<%= book.issued_book_name %>" name="returned_book_name" required>
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Issued ID</span>
+                                <input type="text" value="<%= book.issue_id %>" name="author" required>
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Book ISBN</span>
+                                <input type="text" value="<%= book.isbn_book %>" name="isbn_book2" required>
+                              </div>
+                              <div class="input-box">
+                                <input type="hidden" value="<%= book.issue_id %>" name="issued_id" required>
+                              </div>
+                              <div class="button">
+                                <input type="submit" value="Return">
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+              <%  }); %>
+           <% } %>
+        
+        
+    
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

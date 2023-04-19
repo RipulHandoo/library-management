@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/styles.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register Employee Page</title>
+   </head>
+<body class="register">
+  <div class="main">
+    <div class="logo">
+      <h1>DBMS</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/search">Search Book</a></li>
+        <li><a href="/register-emp">Add Employee</a></li>
+        <li><a href="/register-student">Add Student</a></li>
+    </ul>
+      <div class="ig">
+        <img src="profile.jpg" id="navbar" alt="" />
+      </div>
+      <div class="float" id="flow">
+        <div class="ic">
+          <i class="fa-solid fa-table-columns"></i>
+          <a href="/profile"><p>User Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-regular fa-user"></i>
+          <a href="/update-password"><p>Edit Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="/logout"><p>Logout</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  
+  <div class="container-regiter">
+    <div class="title" style="color: yellow;">Register An Employee</div>
+    <div class="content">
+      <form action="/register-emp" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Enter Employee Name</span>
+            <input type="text" placeholder="Enter Employee name" name="employ_name"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter Employee email" name="employ_email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Employee Position</span>
+            <input type="text" placeholder="Enter Employee Position" name="position">
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="employ_password" id="password" required>
+            <input type="checkbox" id="check" onclick="myFunction()"><span class="details">Show Password</span> 
+            <p style="color: red;"><%= errorMessage %></p>
+          </div>
+          <div class="input-box">
+            <span class="details">Employee Salary</span>
+            <input type="text" placeholder="Enter Employee Salary" name="salary">
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Student</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        margin: 20px 0;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        width: 300px;
+        margin-right: 10px;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #e6f7ff;
+      }
+      td button {
+        background-color: #0077b6;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      td button:hover {
+        background-color: #023e8a;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      p {
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Student</h1>
+    <form action="/search" method="GET">
+      <input type="text" name="search" placeholder="Search by Name or ID" />
+      <button type="submit">Search</button>
+    </form>
+    <form action="/addbook" method="get">
+      <button type="submit">Add Book</button>
+    </form>
+    <div>
+      <% if (books && books.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>ISBN</th>
+              <th>BOOK Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Author</th>
+              <th>Issue</th>
+              <th>Return</th>
+              <th>Update Info</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% books.forEach(function(book) { %>
+              <tr>
+                <td><%= book.ISBN %></td>
+                <td><%= book.book_title %></td>
+                <td><%= book.category %></td>
+                <td><%= book.status %></td>
+                <td><%= book.author %></td>
+                <form action="/issue-book">
+                    <td><button type="submit">Issue To</button></td>
+                </form>
+                <form action="/return-book">
+                  <td><button type="submit">Return</button></td>
+              </form>
+              <form action="/update-book">
+                <td><button type="submit">Update Book</button></td>
+              </form>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No Book found.</p>
+      <% } %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/styles.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register Employee Page</title>
+   </head>
+<body class="register">
+  <div class="main">
+    <div class="logo">
+      <h1>DBMS</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/search">Search Book</a></li>
+        <li><a href="/register-emp">Add Employee</a></li>
+        <li><a href="/register-student">Add Student</a></li>
+    </ul>
+      <div class="ig">
+        <img src="profile.jpg" id="navbar" alt="" />
+      </div>
+      <div class="float" id="flow">
+        <div class="ic">
+          <i class="fa-solid fa-table-columns"></i>
+          <a href="/profile"><p>User Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-regular fa-user"></i>
+          <a href="/update-password"><p>Edit Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="/logout"><p>Logout</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="container-regiter">
+    <div class="title" style="color: yellow;">Add New Books Into  Database</div>
+    <div class="content">
+      <form action="/addBook" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Book Name</span>
+            <input type="text" placeholder="Enter Book Name" name="book_title"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Book Category</span>
+            <input type="text" placeholder="Enter Book Category" name="category" required>
+          </div>
+          <div class="input-box">
+            <span class="details">ISBN Number</span>
+            <input type="text" placeholder="Enter Book's ISBN number" name="ISBN" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Book's Status</span>
+            <input type="text" placeholder="Enter book's status" name="status" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Book's Author</span>
+            <input type="text" placeholder="Enter Book's author" name="author" required>
+            <p style="color: red;"><%= errorMessage %></p>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Add">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
