@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/styles.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register Employee Page</title>
+   </head>
+<body class="register">
+  <div class="main">
+    <div class="logo">
+      <h1>DBMS</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/search">Search Book</a></li>
+        <li><a href="/register-emp">Add Employee</a></li>
+        <li><a href="/register-student">Add Student</a></li>
+    </ul>
+      <div class="ig">
+        <img src="profile.jpg" id="navbar" alt="" />
+      </div>
+      <div class="float" id="flow">
+        <div class="ic">
+          <i class="fa-solid fa-table-columns"></i>
+          <a href="/profile"><p>User Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-regular fa-user"></i>
+          <a href="/update-password"><p>Edit Profile</p></a>
+        </div>
+        <div class="ic">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="/logout"><p>Logout</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="container-regiter">
+    <div class="title" style="color: yellow;"> Register Student</div>
+    <div class="content">
+      <form action="/register-student" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Student Name</span>
+            <input type="text" placeholder="Enter Student Name" name="student_name"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Student Email</span>
+            <input type="text" placeholder="Enter Student email" name="student_email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter Student number" name="student_phoneNo" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Student Address</span>
+            <input type="text" placeholder="Enter Student Address" name="student_address">
+          </div>
+          <div class="input-box">
+            <span class="details">Student Branch</span>
+            <input type="text" placeholder="Enter Student Branch" name="student_branch" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
